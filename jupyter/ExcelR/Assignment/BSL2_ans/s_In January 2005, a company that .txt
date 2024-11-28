@@ -1,0 +1,87 @@
+5.	In January 2005, a company that monitors Internet traffic (WebSideStory) reported that its sampling revealed that the Mozilla Firefox browser launched in 2004 had grabbed a 4.6% share of the market.
+
+I.	If the sample were based on 2,000 users, could Microsoft conclude that Mozilla has a less than 5% share of the market?
+
+II.	WebSideStory claims that its sample includes all the daily Internet users. If that’s the case, then can Microsoft conclude that Mozilla has a less than 5% share of the market?
+
+Confidence Intervals
+
+Here is some information about the question:
+
+- **Confidence interval**: A confidence interval is a range of values that is likely to contain the true value of a population parameter with a certain level of confidence. The confidence level is usually expressed as a percentage, such as 95% or 99%.
+- **Margin of error**: The margin of error is the maximum difference between the point estimate (such as the sample proportion) and the true population parameter at a given confidence level. It depends on the sample size, the confidence level, and the population proportion.
+- **Hypothesis testing**: Hypothesis testing is a method of making decisions or inferences about a population parameter based on a sample statistic. It involves stating a null hypothesis and an alternative hypothesis, choosing a significance level, calculating a test statistic and a p-value, and comparing the p-value with the significance level to draw a conclusion.
+
+To answer the question, we need to construct a 95% confidence interval for the population proportion of Mozilla users based on the sample proportion of 4.6%. The formula for the confidence interval is:
+
+$$\hat{p} \pm z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
+
+where $\hat{p}$ is the sample proportion, $z_{\alpha/2}$ is the critical value for the normal distribution at the given confidence level, and $n$ is the sample size.
+
+- **Part I**: If the sample size is 2,000, then the confidence interval is:
+
+$$0.046 \pm 1.96 \sqrt{\frac{0.046(1-0.046)}{2000}}$$
+
+$$0.046 \pm 0.0137$$
+
+$$(0.0323, 0.0597)$$
+
+This means that we are 95% confident that the true population proportion of Mozilla users is between 3.23% and 5.97%. Since this interval contains 5%, we cannot conclude that Mozilla has a less than 5% share of the market. We would need a larger sample size or a lower confidence level to reduce the margin of error and make the interval narrower.
+
+- **Part II**: If WebSideStory claims that its sample includes all the daily Internet users, then the sample size is much larger than 2,000. Assuming that the sample proportion is still 4.6%, the confidence interval would be:
+
+$$0.046 \pm 1.96 \sqrt{\frac{0.046(1-0.046)}{n}}$$
+
+where $n$ is the number of daily Internet users. Since the margin of error is inversely proportional to the square root of the sample size, a larger sample size would make the margin of error smaller and the interval narrower. For example, if the sample size is 20,000, then the confidence interval is:
+
+$$0.046 \pm 1.96 \sqrt{\frac{0.046(1-0.046)}{20000}}$$
+
+$$0.046 \pm 0.0061$$
+
+$$(0.0399, 0.0521)$$
+
+This interval does not contain 5%, so we can conclude that Mozilla has a less than 5% share of the market at the 95% confidence level. However, this conclusion is based on the assumption that the sample is representative of the population, which may not be true if there is some bias or error in the sampling method.
+
+You can find more information about confidence intervals, margin of error, and hypothesis testing from these sources: [Confidence Intervals](^1^), [Margin of Error](^2^), [Hypothesis Testing](^3^). You can also see some examples of how to solve similar problems from these sources: [Example 1], [Example 2], [Example 3].
+
+Source: Conversation with Bing, 6/2/2024
+(1) Assignment-2-Set3-Q5-Basic-Statistic-Level-2- - GitHub. https://github.com/vaitybharati/Assignment-2-Set3-Q5-Basic-Statistic-Level-2-.
+(2) Assignment Basic Statistics Level 2: Set 3 · GitHub. https://gist.github.com/SudhirSharrma/9ab082d7ed596a3c8a077ad8378b5172?short_path=5d114c8.
+
+Anwer 5
+I.:Yes, Mozila share is less than 5% of the market share
+
+H0: Mozilla's Market share >= 5% of market share
+H1: Mozilla's market share is < 5%
+Test Used: One-sample z-test for proportions
+
+statistical value z =(
+ - p0)/SQRT(p0(1-p0)/n).
+where:
+z= test statistical value
+p0 = Null Hypothesis value ie. 5 or 0.05
+: observerd propotion i.e 4.6% or 0.046
+n=sample size
+
+
+z= (0.046-0.05)/(SQRT(0.05(1-0.05)/2000)
+z=(-0.004).(SQRT(-4/2000))
+z= -0.82078
+
+
+Critical value assumption: Confidence level is 95% and significance level is 5%
+
+the critical value of z as per ztables is -1.96 at 95% confidence level.
+
+statistical vs critical value
+statistical value (-0.82078) is greater than crtical value(-1.96) for given sample we rejcet the null hypothesis (H0).
+Conclusion: Mozilla market share for 2000 sample is less than 5% share of the market
+
+II.:Yes, Mozilla has less than 5% of Market Share, because the problem statement itself says that Mozilla Firefox has 4.6% of market share based on monitoring of daily internet traffic of all internet users (complete population)
+
+
+(3) 5. In January 2005, a company that monitors Internet traffic .... https://brainly.in/question/18672587.
+
+
+
+

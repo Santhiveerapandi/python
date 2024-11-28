@@ -1,0 +1,1276 @@
+SQL BATCH - 5th Nov 2023 (MySQL Shell 8.0.28)
+
+** SQL Definition : It stands for Structured Query Language. 
+A programming language used for interaction with relational database management systems (RDBMS). This includes fetching, updating, inserting, and removing data from tables.
+
+** Different Databases and Platforms to remember : MYSQL >> MySQL Workbench, Microsoft SQL Server >> SSMS, Postgres >> pgAdmin , Oracle >> Oracle Linux, Maria DB >> Maria DB Sky SQL, Exasol >> Dbeaver
+
+https://dev.mysql.com/downloads/file/?id=510039
+
+SET  SQL_SAFE_UPDATES=0;
+
+schemas >> database >> table >> columns
+
+SET  SQL_SAFE_UPDATES=0;
+
+1. IIMjobs.com 
+2. Hirist.com
+3. Neuvoo.com
+4. Indeed.com
+5. Angel.co
+6. Naukri.com
+7. Linkedin
+8. Shine
+9. Wellfound
+10.Instahire
+11. Y- Combinator
+
+** datatypes to remember >> int, float, double, char(25), varchar(255), date, datetime, timestamp
+
+** DDL COMMANDS >> Data definition language (Create, Alter (Rename, drop, add, modify), drop, truncate) 
+DML Commands >> Data Manipulation language (Insert, delete, Update)
+DQL Commands >> Data Query Language (select)
+DCL Commands >> Data Control Language (Grant, Revoke)
+TCL Commands >> Transaction Control Language (Rollback, commmit, savepoint)
+
+-- Example 1
+-- 1. schema >> excler_andheri
+-- 2. table students >> column (student_id, first_name, last_name, age, gender, location, batch_name)
+ create schema excelr_andheri 
+create table students (
+student_id int,
+first_name char (25),
+last_name char (25),
+age int,
+gender char(25),
+location char(25),
+batch_name varchar(255)
+)
+
+-- Example 2  table name >> employee 
+-- (employee_id, first_name, last_name, joining_date, age, address)
+create table employee(
+employee_id int, 
+first_name char(25), 
+last_name char(25), 
+joining_date date, 
+age int, 
+address varchar(255)
+)
+
+--Examle 3 table name >> order
+create schema excelr_andheri
+use excelr_andheri
+create table student (
+student_Id Int,
+first_Name Varchar(255),
+last_name Varchar(255),
+age int,
+gender char(25),
+location char(25),
+batchname varchar(255))
+
+
+alter table students 
+drop column first_name
+
+ALTER TABLE student RENAME TO students
+
+
+-- Homework:
+
+-- 1. create a schema
+-- 2. create a table
+-- 3. add minimum 5 columns
+-- 4. Drop a column
+-- 5. add 2 new columns afterwards
+-- 6. change the datatype of a column
+-- 7. rename a column
+
+
+create schema ekart_sales
+
+use ekart_sales
+
+create table orders(
+order_id double,
+customer_id varchar(255),
+product_id double,
+order_date date,
+shipping_date date,
+quantity int,
+amount float,
+discount float,
+coupon_code varchar(255),
+shipping_cost float,
+delivery_address varchar(255),
+city varchar(255),
+state varchar(255), 
+country varchar(255), 
+postal_code varchar(255), 
+mode_of_payment char(25), 
+category varchar(255), 
+segment varchar(255)
+)
+
+desc orders
+
+alter table orders
+drop segment
+
+alter table orders
+add column sub_category varchar(255),
+add column region char(25)
+
+alter table orders
+modify column country char(25) 
+desc orders
+
+alter table orders
+rename column delivery_address to address
+
+
+
+insert into excelr_andheri.students( last_name, age, gender, location, batch_name, student_id)
+values( "Harde", 20, "M", "Mumbai", "Andheri", 1),
+( "Garate", 18, "F", "Mumbai", "Andheri", 2) 
+
+insert into excelr_andheri.employee(employee_id, first_name, last_name, joining_date, age, address)
+value(1, "Ritika", "Biswas", "2022-08-29", 24, "Mira Road"),
+(2, "Arshi", "Shaikh", "2022-09-01", 26, "Andheri"),
+(3, "Akshay", "Dutta", "2022-09-17", 20, "Andheri"),
+(4, "Shruthi", "Shetty", "2022-10-21", 24, "Borivali"),
+(5, "Jayesh", "Tambe", "2022-11-06", 27, "Vashi")
+
+-- insert into excelr_andheri.employee( employee_id, first_name, last_name, joining_date, age, address)
+-- values( 1, "Shravani", "Kerkar", "2024-02-17", 20, "Andheri"),
+-- ( 2, "Shruti", "Kerkar", "2024-02-16", 19, "Borivali"),
+-- ( 3, "Sakshi", "Bhise", "2024-02-15", 21, "Borivali"),
+-- ( 4, "Raj", "Kerkar", "2024-02-14", 23, "Kandivali"),
+-- ( 5, "Rahul", "Kerkar", "2024-02-13", 24, "Borivali")
+-- select * from excelr_andheri.employee
+
+
+create table manager (
+manager_id int not null primary key,
+employee_id int,
+manager_address varchar(255),
+manager_designation char(25),
+FOREIGN KEY (employee_id) REFERENCES employee(employee_id))
+
+-- create table employee(
+-- employee_id int not null Primary key, 
+-- first_name char(25), 
+-- last_name char(25), 
+-- joining_date date, 
+-- age int, 
+-- address varchar(255)
+-- )
+
+create table excelr_andheri.hr_team (
+hr_manager_id int not null primary key,
+employee_id int,
+tecnical_expertise varchar(255),
+division char(25),
+sub_division char(25),
+FOREIGN KEY (employee_id) REFERENCES employee(employee_id))
+
+
+INSERT INTO employee (employee_id, first_name, last_name, joining_date, age, address)
+VALUES
+(1, 'John', 'Doe', '2022-01-15', 30, '123 Main St, City, Country'),
+(2, 'Jane', 'Smith', '2022-02-20', 28, '456 Oak St, City, Country'),
+(3, 'Mike', 'Johnson', '2022-03-25', 35, '789 Pine St, City, Country'),
+(4, 'Emily', 'Williams', '2022-04-10', 26, '101 Maple St, City, Country'),
+(5, 'David', 'Brown', '2022-05-15', 32, '202 Cedar St, City, Country'),
+(6, 'Sophia', 'Taylor', '2022-06-20', 29, '303 Elm St, City, Country'),
+(7, 'Daniel', 'Miller', '2022-07-25', 34, '404 Birch St, City, Country'),
+(8, 'Olivia', 'Moore', '2022-08-10', 27, '505 Walnut St, City, Country'),
+(9, 'Ethan', 'Anderson', '2022-09-15', 31, '606 Pine St, City, Country'),
+(10, 'Ava', 'White', '2022-10-20', 33, '707 Cedar St, City, Country');
+
+
+create table employee1 (
+employee_id int,
+first_name char (25),
+last_name char (25),
+joining_date date,
+age int,
+address varchar(255)
+)
+--here we forgot to add constraint ie. employee_id  should not be null and is a primary key--
+alter table excelr_andheri.employee1 
+modify column employee_id int not null primary key
+
+question. change first_name john to rahil?
+update employee
+set first_name = "Rahil"
+where first_name = "sahil"
+
+
+TRUNCATE TABLE MEANS TO REMOVE THE ENTIRE CONTENT FROM THE TABLE BUT NOT HAMPERING THE TABLE STRUCTURE
+
+SELECT COUNT(DISTINCT ORDERID) AS ORDER_COUNT FROM `order details` O
+
+select * from orders
+ where customerid like ("_e%c")
+
+q. I want to display such orders whose shipment date is between 1st sept 1994 till 31dec 1994?
+select * from orders
+where shippeddate between "1994-09-01" and "1994-12-31"
+
+-- select * from customers
+-- where city = ("London")
+
+select * from customers
+where companyName like "A%N"
+
+select * from `order details`
+where unitprice > 25 and discount > 0.15
+
+
+which are the products whose stock is empty?
+
+
+-- operator >> =, in, like, > , < , between , not between, not in , not like, <>, and , or
+
+Select * from products
+where UnitsInStock = 0
+
+
+
+select * from orders
+WHERE COMMENTS IS NULL
+
+q. case when
+-- 0 - 1000 >> Less quantity available
+-- 1001 - 3000 >> Moderate quantity available
+-- 3000 - 5000 >> High quantity available
+-- > 5000 >> Very high quantity available
+
+
+select productcode,
+productname,
+productline,
+productvendor,
+quantityinstock,
+case when quantityinstock >=0 and quantityinstock <= 1000 then "Less quantity available"
+when quantityinstock >= 1001 and quantityinstock <= 3000 then "Moderate quantity available"
+when quantityinstock >=3001 and quantityinstock <= 5000 then "High quantity available"
+when quantityinstock >= 5000 then "Very high quantity available" else "others"
+end as "quantity status"
+from PRODUCTS 
+
+select * ,
+case when amount >=0 and amount<= 3 then "Less rent"
+when amount >=4  and amount <=6  then "Moderate rent"
+when amount >=7 and amount <= 9 then "High rent"
+when amount >= 10 then "Very high " else "others"
+end as "amount status"
+from payment
+
+select * ,
+case when replacement_cost >=9.99 and replacement_cost <= 15.99 then "Less replacement_cost"
+when replacement_cost >=16 and replacement_cost <=20.99  then "Moderate replacement_cost"
+when replacement_cost >=21 and replacement_cost <= 25.99 then "High replacement_cost"
+when replacement_cost >= 26 then "Very high replacement_cost " else "others"
+end as "replacement_cost_status"
+from film
+
+
+question>> for each and every order, I want overall sales, overall quantity ordered, average discount?
+
+select orderid,
+sum(unitprice*quantity) as overall_sales,
+sum(quantity) as overall_quantity,
+avg(discount) as avg_discount
+from `order details`
+group by orderid
+
+question >> how many orders were done by each and every customer?
+
+select customerid,
+count(orderid) as order_count
+from orders 
+group by customerid
+
+
+question. I want to know the count of customers from each and every city?
+-- select city,
+-- count(CustomerID) as citycount
+-- from customers
+-- group by city
+
+question.  I want to know the count of customers for each and every contact title? I want those customers only
+whose customerid starts from A, C, F
+select ContactTitle,
+count(customerID) as title_count
+from customers
+where customerID like ("A%") or customerID like ("C%") OR customerID like ("F%")
+group by ContactTitle
+
+question.-- I want to know how much overall amount, min amount, avg amount and max amount each and every customer paid?
+
+select customernumber,
+sum(amount) as overall_amount,
+min(amount) as minimum_amount,
+max(amount) as maximum_amount,
+round(avg(amount),2) as average_amount
+from payments
+group by customernumber
+
+
+-- I want to know how many employees work in each and every office?
+
+select officecode,
+count(employeenumber) as employee_count
+from employees
+group by officecode
+
+-- I want a column named as full name based on firstname and lastname?
+
+select *,
+concat(firstname, " ", lastname) as full_name 
+from employees
+
+
+-- I want to know the performance of staff based on the total movies they tried to rent to customers?
+select staff_id,
+count(rental_id) as overall_rental_count
+from rental
+group by 1
+order by 2 desc
+limit 1
+
+
+-- I want to know in each and every store, for each and every inventory, how much stock I have?
+select store_id,
+inventory_id,
+sum(film_id) as film_stock
+from inventory
+group by 1,2
+order by 1,2
+
+
+select user_id,
+count(post_id) as posts_count
+from posts p
+where likes >=100
+group by 1
+order by 2 desc
+
+
+
+**Windows functions >>
+
+** Aggregate function >> max, min, avg, sum, count
+** Ranking function  >> rank, dense_rank, row_number, percent_rank
+** Value functions >> lead, lag, first_value, last_value
+
+
+** Execution of SQL QUERY >>>>  FROM, JOIN,  WHERE, GROUP BY , HAVING, SELECT, ORDER BY, LIMIT
+
+** having function is used to deal with aggregate functions and where function is used to deal with non- aggregate functions
+** use of having function:
+
+select orderid,
+count(productid) as product_counts,
+sum(unitprice*quantity) as total_sales,
+sum(quantity) as overall_quantities,
+round(avg(discount),2) as average_discount
+from `order details`
+group by 1
+having sum(unitprice*quantity) > 500
+order by 3
+
+q. I want such orders only whose avg_discount is > 10 %
+-- select orderid,
+-- count(productid) as product_counts,
+-- sum(unitprice*quantity) as total_sales,
+-- sum(quantity) as overall_quantities,
+-- round(avg(discount),2) as average_discount
+-- from `order details`
+-- group by 1
+-- having round(avg(discount),2) > 0.1
+
+
+
+question: I want to display the products whose min unit price is greater than equals to 6?
+select  distinct productid,
+unitprice
+from `order details`
+where unitprice >= 6
+order by 2
+
+
+
+1. I want the total unit price of each order?
+2. I want the total quantites of each order?
+3. I want the avg discount as well for each order?
+4. I want to populate those order id only whose total unit price is greater than 25?
+5. round each and every solution to 2 decimals only
+6. I want to know the number of products as well for every order?
+
+
+select orderid,
+round(sum(unitprice),2) as total_price,
+round(sum(quantity),2) as total_quantities,
+round(avg(discount),2) as avg_discount,
+count(productid) as product_count
+from `ORDER DETAILS`
+group by 1
+having sum(unitprice) > 25
+
+question: I WANT TO KNOW THE ORDER COUNT OF EACH AND EVERY CUSTOMER ALONG WITH THEIR AVERAGE FREIGHT VALUE?
+
+select customerid,
+count(orderid)  as order_count,
+round(avg(freight),2) as avg_freight_charge
+from orders as o
+group by 1
+ORDER BY 2 DESC
+
+--Q.HW--here we forgot to add constraint ie. order_id  should be "not null" and is a primary key--
+
+--q.  I want to populate those customer names who had done atleast one order or I can say whho is available in order table?
+
+SELECT DISTINCT(C.CUSTOMERID),
+CONTACTNAME AS CUSTOMERNAME
+FROM CUSTOMERS C
+INNER JOIN ORDERS O ON C.CUSTOMERID = O.CUSTOMERID
+
+** steps to write a join query
+
+1. you will populate the column name from both or multiple
+2. from base table
+3. you will implement join (inner, left)
+4. you will write the secondary table name
+5. you will write on function 
+6. you will match with common column name 
+
+**Interview question
+select p.user_id,
+username,
+count(post_id) as posts_count
+from posts p
+inner join users u on u.user_id = p.user_id
+where likes >=100
+group by 1
+order by 2 desc
+
+ select orderid,
+ od.productid,
+ productname,
+ od.unitprice,
+ quantity,
+ discount
+ from `order details` od
+ left join products p on od.productid = p.productid 
+ 
+ 
+  populate below 4 columns:
+productid,
+productname,
+supplierid,
+suppliername
+
+select ProductID,
+ProductName,
+p.SupplierID,
+s.CompanyName
+from products p  
+left join suppliers s on p.SupplierID =  s.SupplierID
+
+question: populate:
+productname,
+categoryid,
+categoryname
+
+
+select ProductName,
+p.CategoryID,
+CategoryName
+from products p  
+inner join categories c on c.CategoryID = p.CategoryID
+
+
+
+select orderid,
+count(productid) as product_counts,
+sum(unitprice*quantity) as total_sales,
+sum(quantity) as overall_quantities,
+round(avg(discount),2) as average_discount
+from `order details`
+group by 1
+
+In the above query add customerid as well as customer name?
+select od.orderid,
+o.customerid,
+c.contactname as customername,
+count(productid) as product_counts,
+sum(unitprice*quantity) as total_sales,
+sum(quantity) as overall_quantities,
+round(avg(discount),2) as average_discount
+from `order details` od
+left join orders o on o.orderid = od.orderid
+left join customers c on c.customerid = o.customerid
+group by 1
+
+
+question-- use classicmodels
+-- select * from employees
+
+empnumber,
+full name,
+office city
+
+select e.employeeNumber,
+concat(e.firstName," ", e.lastName) as "Full Name",
+o.city
+from employees e
+left join offices o  on e.officeCode = o.officeCode
+
+question. I want to know the overall amount paid by each and every customernumber and even I want to know the customer name?
+select c.customernumber,
+c.customerName,
+round(sum(p.amount),0) as total_amt
+from customers c
+left join payments p on c.customernumber = p.customernumber
+
+select p.productcode,
+productname,
+quantityinstock,
+sum(od.quantityordered) as total_quantityordered
+from products p
+left join orderdetails od on od.productcode = p.productcode
+group by 1
+group by 1
+
+-- how many orders were processed by each and every employee?
+select
+emp.employeeNumber,
+GROUP_CONCAT(o.orderNumber ORDER BY emp.employeeNumber) ordersdetail,
+COUNT(o.orderNumber) as processed
+from classicmodels.employees emp
+Left join classicmodels.customers cs on emp.employeeNumber=cs.salesRepEmployeeNumber
+Left join classicmodels.orders o on o.customerNumber=cs.customerNumber
+group by 1 having count(cs.salesRepEmployeeNumber) >0;
+
+select
+emp.employeeNumber,
+concat(emp.firstName, ' ',emp.lastName) as employeeName, 
+SUM(IF (o.status='shipped', 1, 0)) as processed,
+GROUP_CONCAT(o.orderNumber ORDER BY emp.employeeNumber) ordersdetail,
+count(o.orderNumber) as all_orders
+from classicmodels.employees emp
+Left join classicmodels.customers cs on emp.employeeNumber=cs.salesRepEmployeeNumber
+Left join classicmodels.orders o on o.customerNumber=cs.customerNumber
+group by 1 having count(cs.salesRepEmployeeNumber) >0;
+
+-- create schema rank_dense_rank_row_no
+create table rank_dense_rank_row_no.employee_details (
+employee_id int not null primary key,
+first_name char(25),
+last_name char(25),
+age int,
+salary int)
+
+insert into rank_dense_rank_row_no.employee_details(employee_id, first_name, last_name, age, salary)
+values(1, "Sakshi", "Bhise", 22, 50000),
+(2, "Mehul", "Oganiya", 25, 60000),
+(3, "Aakash", "Barua", 23, 60000),
+(4, "Ritika", "Biswas", 22, 65000),
+(5, "Minal", "Garate", 21, 70000),
+(6, "Priyam", "Vyas", 22, 70000),
+(7, "Aashish", "Gupta", 24, 60000)
+
+
+
+SELECT
+  employee_id,
+  salary,
+  RANK() OVER (ORDER BY salary DESC) AS salary_rank,
+  DENSE_RANK() OVER (ORDER BY salary DESC) AS salary_dense_rank
+FROM
+  rank_densrnk;
+  
+  
+rank >> rank is calculated based on row counting but if the values are similar then it populates the same rank
+dense_rank >> it is a consecutive ranking process but here as well if the values are similar then it populates the same rank
+	
+
+select CUSTOMERID,
+ORDERDATE AS FIRST_ORDER_DATE,
+LAG(ORDERDATE) OVER(ORDER BY ORDERDATE) AS SECOND_LAST_ORDER_DATE,
+LAG(ORDERDATE,2) OVER(ORDER BY ORDERDATE) AS THIRD_LAST_ORDER_DATE
+from orders
+where customerid = "VINET"
+ORDER BY 2 DESC
+LIMIT 1
+
+SELECT CUSTOMERID,
+ORDERDATE,
+LAG(ORDERDATE) OVER (ORDER BY ORDERDATE) AS NEXT_ORDER_DATE
+FROM ORDERS
+ORDER BY 2 ASC
+-- ORDER BY 1,2
+
+
+SELECT
+  CustomerID,
+  CompanyName,
+  ContactName,
+  LAG(CompanyName) OVER (ORDER BY CompanyName) AS previous_company,
+  LEAD(CompanyName) OVER (ORDER BY CompanyName) AS next_company
+FROM customers;
+
+
+select * from employee_details
+union 
+select * from employee_details1
+
+
+-- >> VIEWS  >> SIMPLE VIEW, COMPLEX VIEW
+CREATE OR REPLACE VIEW CUSTOMER_VIEWS AS
+(SELECT C.CUSTOMERID,
+COMPANYNAME,
+CONTACTNAME AS CUSTOMERNAME,
+CONTACTTITLE,
+ADDRESS,
+COUNT(ORDERID) AS ORDER_COUNT
+FROM CUSTOMERS c
+LEFT JOIN ORDERS O ON O.CUSTOMERID  = C.CUSTOMERID
+GROUP BY 1
+)
+
+
+question >> overall sales of each and every products ?
+
+SELECT P.PRODUCTCODE,
+PRODUCTNAME,
+SUM(QUANTITYORDERED) * SUM(PRICEEACH)  AS OVERALL_SALES_AMOUNT
+FROM PRODUCTS P
+INNER JOIN ORDERDETAILS OD ON OD.PRODUCTCODE = P.PRODUCTCODE 
+GROUP BY 1
+
+
+QUESTION >> HOW MANY ACTORS WORKED ON EACH AND EVERY MOVIE AND DISPLAY ONLY TOP 5 ACTORS BASED ON HIGHEST OF NUMBER OF MOVIES THEY DID?
+
+select
+a.actor_id,
+concat(a.first_name, ' ', a.last_name) AS actor_name,
+count(fa.film_id) AS movies_worked_on
+from actor a
+join film_actor fa ON a.actor_id = fa.actor_id
+group by a.actor_id, actor_name
+order by movies_worked_on desc
+LIMIT 5;
+
+https://datalemur.com?referralCode=XqUvdDQM
+
+
+-- DISPLAY THE 3RD ACTOR WHO HAS WORKED ON MINUMUM MOVIES?
+select
+a.actor_id,
+concat(a.first_name, ' ', a.last_name) AS actor_name,
+count(fa.film_id) AS movies_worked_on
+from actor a
+join film_actor fa ON a.actor_id = fa.actor_id
+group by a.actor_id, actor_name
+order by movies_worked_on DESC
+LIMIT 1
+OFFSET 2
+
+WITH RankedStates AS (
+    SELECT State, SUM(NumberofTourist) AS TotalTourists,
+           ROW_NUMBER() OVER (ORDER BY SUM(NumberofTourist) DESC) AS RowNum
+    FROM Indian_Tourism
+    GROUP BY State
+    HAVING TotalTourists > 1000000
+)
+SELECT State, TotalTourists
+FROM RankedStates
+WHERE RowNum = 3;
+
+WITH CTE AS (
+select
+a.actor_id,
+concat(a.first_name, ' ', a.last_name) AS actor_name,
+count(fa.film_id) AS movies_worked_on,
+ROW_NUMBER() OVER (ORDER BY count(fa.film_id) DESC) AS RowNum
+from actor a
+join film_actor fa ON a.actor_id = fa.actor_id
+group by a.actor_id, actor_name
+order by movies_worked_on DESC)
+
+SELECT * FROM CTE
+WHERE RowNum = 3
+
+
+-- CTE is called common table expression
+create or replace view cte_example as (
+WITH CTE AS (
+select
+a.actor_id,
+concat(a.first_name, ' ', a.last_name) AS actor_name,
+count(fa.film_id) AS movies_worked_on,
+ROW_NUMBER() OVER (ORDER BY count(fa.film_id) DESC) AS RowNum
+from actor a
+join film_actor fa ON a.actor_id = fa.actor_id
+group by a.actor_id, actor_name
+order by movies_worked_on DESC)
+
+SELECT * FROM CTE
+WHERE RowNum = 3)
+
+
+with cte as (
+select cv.customerid,
+order_count,
+count(productid) as product_count
+ from customer_views cv
+ left join orders o on cv.customerid = o.customerid
+ left join `order details` od on od.orderid = o.orderid
+ group by 1)
+
+select * from cte
+where product_count > 50
+
+
+
+
+you will have to create 2 ctes and provide some analytical solution by using northwind database
+
+
+with cte as (
+
+
+
+),
+cte1 as (
+
+
+)
+
+select * from cte
+inner join cte1 on 
+
+where
+
+
+
+-- find third highest selling product and average order shipping cost??
+
+with cte as (
+select od.productid,
+productname,
+sum(quantity) as overally_quantity_sold
+ from `order details` od
+join products p on p.productid = od.productid
+group by 1
+order by 3 desc
+limit 1),
+cte1 as (
+select o.orderid,
+freight,
+productid
+from orders o
+left join `order details` od on od.orderid = o.orderid)
+
+select cte.productid,
+cte.productname,
+cte.overally_quantity_sold,
+avg(freight) as avg_shipping_cost
+from cte 
+left join cte1 on cte1.productid = cte.productid
+group by 1,2,3
+
+
+https://datalemur.com/questions/signup-confirmation-rate
+
+with cte as (
+select e.email_id,
+count(e.email_id) as email_count
+from emails e
+group by email_id),
+-- inner join texts t on e.email_id = t.email_id)
+cte1 as (
+select e.email_id,
+count( e.email_id) as email_count_confirmed
+from emails e
+inner join texts t on e.email_id = t.email_id
+where signup_action = 'Confirmed'
+group by e.email_id)
+
+select round(sum(email_count_confirmed)/sum(email_count),2)
+from cte
+left join cte1 on cte.email_id = cte1.email_id
+
+https://datalemur.com/questions/sql-histogram-tweets
+
+1. add office city in the employees table?
+-- select e.*,
+-- city
+-- from employees e
+-- left join offices o on o.officecode = e.officecode
+
+
+2. how mmany employees sits in each and every city?
+select o.city,
+count(e.employeeNumber)
+from offices o
+inner join employees e on o.officecode = e.officecode
+group by 1
+
+
+
+CROSS JOIN OR Cartesian product
+SELECT EMPLOYEENUMBER,
+FIRSTNAME,
+LASTNAME,
+CITY
+FROM EMPLOYEES
+CROSS JOIN
+OFFICES
+ORDER BY 1
+
+
+-- self join
+create schema self_join_chapter
+use  self_join_chapter
+  CREATE TABLE employees (
+      employee_id INT,
+      name VARCHAR(50),
+      manager_id INT
+  );
+
+  
+INSERT INTO employees (employee_id, name, manager_id)
+VALUES
+    (1, 'Alice', 3),
+    (2, 'Bob', 3),
+    (3, 'Charlie', NULL),
+    (4, 'David', 2),
+    (5, 'Eva', 2),
+    (6, 'Frank', 1);
+    	
+    
+question >> I want to display the manager name?    
+select e.employee_id,
+e.name as employee_name,
+e.manager_id,
+m.name as manager_name 
+from employees e
+left join employees m on e.manager_id = m.employee_id
+
+
+CREATE TABLE employees_1 (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(50),
+    salary DECIMAL(10, 2),
+    manager_id INT
+);
+
+INSERT INTO employees_1 VALUES
+(1, 'John', 60000, NULL),
+(2, 'Alice', 80000, 1),
+(3, 'Bob', 70000, 1),
+(4, 'Charlie', 95000, 2),
+(5, 'David', 75000, 2),
+(6, 'Eva', 90000, 3),
+(7, 'Frank', 82000, 3);
+
+question >> display the employees who have salary more than manager
+SELECT e1.employee_id,
+e1.employee_name, 
+e1.salary AS employee_salary,
+e2.salary AS manager_salary
+FROM employees_1 e1
+JOIN employees_1 e2 ON e1.manager_id = e2.employee_id
+WHERE e1.salary > e2.salary;
+
+
+--  CTE to Rank employees based on hire date
+use dwh_northwind_database
+--  select * from employees
+--  order by 7
+
+-- Note: where and having function doesn't work directly with ranking and values functions
+WITH RankedEmployees AS (
+    SELECT EmployeeID, 
+    FirstName, 
+    LastName,
+    ROW_NUMBER() OVER (ORDER BY HireDate) AS Rank_emp
+    FROM Employees
+)
+SELECT EmployeeID, FirstName, LastName, Rank_emp
+FROM RankedEmployees
+WHERE Rank_emp <= 5;
+
+WITH SalesByYear AS (
+     SELECT extract(year from OrderDate) AS OrderYear,
+     SUM(od.Quantity * od.UnitPrice) AS TotalSales
+    FROM Orders o
+    INNER JOIN `Order Details` od ON o.OrderID = od.OrderID
+    GROUP BY YEAR(OrderDate)
+)
+SELECT OrderYear, TotalSales,
+    CASE
+        WHEN TotalSales > (SELECT AVG(TotalSales) FROM SalesByYear) THEN 'Above Average'
+        ELSE 'Below Average'
+    END AS SalesStatus
+FROM SalesByYear;
+
+
+ -- How many orders were done by each and every customer,
+ -- even wanted to know his overall payment, count of products, quantity ordered (IMPORTANT QUESTION)
+ 
+ with ordercount_payment as (
+ select c.Customerid,
+ contactname as customername,
+ count(distinct o.orderid) as order_count,
+ sum(unitprice * quantity) as overall_payment,
+ count(productid) as products_count
+--  sum(quantity) as overall_quantity
+ from customers c
+ left join orders o on o.customerid = c.customerid
+ left join `order details` od on od.orderid = o.orderid
+ group by 1,2),
+ 
+ quantity_count as(
+ SELECT o.customerid,
+ o.orderid,
+ sum(quantity) as overall_quantity
+ FROM ORDERS o
+ left join `order details` od on od.orderid = o.orderid
+ group by 1,2)
+ 
+ select  oc.Customerid,
+ customername,
+ order_count,
+ overall_payment,
+ products_count,
+ sum(overall_quantity) as overall_quantity
+ from ordercount_payment oc
+ left join quantity_count qc on oc.customerid = qc.customerid
+ group by 1,2,3,4,5
+ 
+ 
+ -- select name,
+-- type,      -- electronic, clothing, groceries, books
+-- case when type = "electronic" then (price - price*0.15)
+-- when type = "clothing" then (price -  price*0.20)
+-- when type = "groceries" then (price - price*0.05)
+-- when type = "books" then (price - price*0.15) else price end as discounted_price,
+-- price
+-- from products
+
+with electronic as (
+select name,
+type,
+price - price*0.15 as discounted_price
+from products
+where type = "electronic"
+),
+clothing as (
+select name, 
+type,
+price - price*0.20 as discounted_price
+from products
+where type = "clothing"
+),
+groceries as (
+select name,
+type,
+price - price*0.05 as discounted_price
+from products
+where type = "groceries"
+),
+books as (
+select name,
+type,
+price - price*0.15 as discounted_price
+from products
+where type = "books"
+)
+select * from electronic
+union all
+select * from clothing
+union all
+select * from groceries
+union all
+select * from books
+
+
+
+-- use dwh_northwind_database
+
+-- Examples of Subqueries:
+-- 1. basic subquery
+-- select distinct c.customerid from customers c
+-- inner join orders o on o.customerid = c.customerid
+-- subquery below:
+--  select * from customer 
+--  where customerid in (select customerid from orders)
+
+-- 2. subquery with aggregate function
+-- select orderid,
+-- productid,
+-- unitprice from `order details`
+-- where unitprice > (select avg(unitprice) from `order details`)
+
+-- 3. subquery with correlated subquery
+-- SELECT ContactName as CustomerName, 
+-- (SELECT COUNT(orderid) FROM Orders WHERE Orders.CustomerID = Customers.CustomerID) AS OrderCount
+-- FROM Customers;
+
+-- one more example:
+-- SELECT ProductID, ProductName
+-- FROM Products
+-- WHERE ProductID IN (SELECT ProductID FROM `order details`);
+
+
+-- INDEXES
+CREATE INDEX idx_customer_id ON customers (customerid);
+1. If data is in ordered state and even have a key then it is called as primary index (ex. 1 2 3 4 5 6 7)
+2. Unordered state but have a key or no key then secondary index (ex. 2 5 6 8 1 9)
+3. ordered state but not having a key then clustered index (ex. 111 22 3333 44444)  
+
+
+Indexes are created in databases like MySQL to improve the performance of queries
+and to optimize the retrieval of data.
+By creating an index on one or more columns of a table, 
+the database can quickly locate the rows that match a given search condition, 
+rather than having to scan the entire table.
+This can significantly reduce the time it takes to execute queries, particularly on large tables.
+
+In general, we create indexes on columns that are frequently used in WHERE clauses,
+JOIN clauses, and ORDER BY clauses of SQL queries.
+By doing so, we can avoid full table scans and make the queries faster and more efficient.
+
+However, creating indexes can also have some drawbacks.
+Indexes can take up disk space and can slow down the performance of INSERT, UPDATE, and DELETE operations,
+as the database has to maintain the index whenever a record is added, modified, or deleted.
+
+Therefore, it's important to carefully consider which columns to index and to balance
+the performance benefits with the costs of maintaining the index.
+In general, we should create indexes on columns that are frequently searched or sorted,
+and avoid creating indexes on columns that are rarely used in queries.
+
+In summary, we create indexes to improve the performance of queries
+and optimize the retrieval of data, but we should do so carefully
+and selectively to avoid negative impacts on the database's performance.
+
+-- teams who won 3 consecutive world cups? 
+ create schema consecutive_imp_question 
+  use consecutive_imp_question
+CREATE TABLE world_cups (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    year INT,
+    team VARCHAR(255)
+);
+
+ INSERT INTO world_cups (year, team) VALUES
+    (2011, 'India'),
+    (2015, 'Australia'),
+    (2019, 'England'),
+    (2007, 'Australia'),
+    (2003, 'Australia'),
+    (1999, 'Australia'),
+    (1996, 'Sri Lanka'),
+    (1992, 'Pakistan'),
+    (1987, 'Australia'),
+    (1983, 'India');
+ 
+with cte as (
+select team,
+year,
+lead(year,1) over(partition by team order by year) as next_win_year,
+lead(year,2) over(partition by team order by year) as next_next_win_year
+from world_cups)
+
+select * from cte
+where next_win_year - year = 4 and next_next_win_year - year = 8
+ 
+ 
+ -- consumers with consecutive 3 orders month wise from northwind table.
+ WITH month_cte AS (
+    SELECT
+        CustomerID,
+        month(OrderDate) as order_month
+    FROM
+        Orders
+),
+cte2 as (
+select customerid,
+order_month,
+LEAD(order_month, 1) OVER (PARTITION BY CustomerID ORDER BY order_month) AS Nextordermonth,
+LEAD(order_month, 2) OVER (PARTITION BY CustomerID ORDER BY order_month) AS NextNextordermonth
+from month_cte)
+
+select * from cte2
+where Nextordermonth - order_month = 1 and NextNextordermonth - order_month = 2
+ 
+ 
+ 
+ 
+ -- display the numbers who are appearing consecutively 3 times atleast?
+-- output should be 1,3,6
+ 
+create table ConsecutiveNumbers
+ (
+numbers int
+)
+ 
+ INSERT INTO ConsecutiveNumbers (Number)
+values(1),
+(1),
+(1),
+(2),
+(3),
+(3),(3),
+(3),
+(2),
+(4),
+(4),
+(5),
+(5),
+(6),
+(6),(6),(6),(6);
+ 
+INSERT INTO ConsecutiveNumbers (Number)
+values(7),
+(7),
+(1),
+(7),
+(2),
+(8),(8),
+(9),
+(9),
+(8),
+(9)
+
+with cte as(
+select
+distinct case 
+  when number = (lead(number,1) over ()) and 
+number = (lead(number,2) over ()) then number
+  end as final_output
+from consecutivenumbers order by 1)
+select * from cte
+where final_output IS NOT NULL    
+    
+---Triggers
+
+
+create schema `trigger`
+
+use `trigger`
+
+create table employees(
+Id int primary key,
+E_Name varchar(100),
+Salary int)
+
+Create table Hiring(
+Id int,
+Hiring_time timestamp)
+    
+-- Q.Create a trigger to add hiring time whenever an employee gets added to employee table
+
+create trigger Hiring_Time
+after
+insert on employees
+for each row
+insert into hiring values(new.Id, Now())
+
+
+insert into employees values (1, "ABC", 100000)
+
+select * from Hiring
+
+-- Q. create trigger to insert and update name of employee to upper case
+
+-- create trigger update_name
+-- before
+-- update on employees
+-- for each row
+-- set new.E_name= upper(new.E_name)
+
+-- create trigger update_name_i
+-- before
+-- insert on employees
+-- for each row
+-- set new.E_name= upper(new.E_name)
+
+
+-- Q. trigger for Delete logs
+
+-- create table logs(
+-- Id int,
+-- E_name varchar(255))
+
+-- create trigger logs
+-- after
+-- delete on employees
+-- for each row
+-- insert into logs values(old.Id,old.E_name)
+
+
+
+-- EXCEPTION HANDLING
+
+-- create schema Group3
+-- use group3
+-- create table payments (
+-- client_id int,
+-- amount int not null
+-- )
+
+-- select * from payments
+-- insert into payments (client_id, amount)
+-- value (1, 100),
+-- (2, null)
+
+-- desc payments
+
+-- delimiter //
+-- create procedure `Payment` (cid int, amt int)
+-- begin 
+-- insert into payments values(cid, amt);
+-- end //
+-- delimiter ;
+-- call payment (2, null);
+
+-- create table fraud (
+-- id int not null primary key,
+-- client_id int,
+-- message varchar (50),
+-- Time_of_fraud datetime 
+-- )
+
+-- insert into fraud (id,client_id,message,Time_of_fraud)
+-- value (1,1,"Fraud Transaction",now()),
+
+-- select * from fraud
+-- desc fraud 
+
+-- drop procedure `Payment`
+
+-- delimiter //
+-- create procedure `Payment` (cid int, amt int)
+-- begin 
+-- declare continue handler for 1048
+-- begin
+-- insert into fraud(client_id, message,Time_of_fraud)
+-- value (cid, "Fraud Transaction",now());
+-- end;
+-- insert into payments values(cid,amt);
+-- select "Successful" as msg;
+-- end //
+-- delimiter ;
+
+-- select * from fraud
+
+
+

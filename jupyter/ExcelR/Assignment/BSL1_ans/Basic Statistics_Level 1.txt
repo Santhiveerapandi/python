@@ -1,0 +1,179 @@
+Main Ans Ref: https://github.com/MoinDalvs/Assignment-Basic-Stats-Level1
+
+
+
+Ans Ref: https://www.coursehero.com/file/53641842/Assignment-1docx/
+
+
+Discrete
+
+Continuous
+
+
+Ans-1*0.015+4*0.20+3*0.65+5*0.005+6*0.01+2*.0120 =3.090
+
+
+
+
+Ans Q4a): is zero. This is because the minimum possible sum of two dice is 2, when both dice show 1. There is no way to get a sum of 1 with two dice.
+Ans Q4b): is the same as the probability that the sum is 2, 3, or 4. There are 36 possible outcomes when rolling two dice, and only 6 of them have a sum of 2, 3, or 4. These are (1,1), (1,2), (2,1), (1,3), (3,1), and (2,2). Therefore, the probability is 6/36, which simplifies to 1/6
+Ans Q5c):  is the same as the probability that the sum is divisible by 6, since 6 is the least common multiple of 2 and 3. There are only four possible outcomes that have a sum divisible by 6, namely (1,5), (5,1), (3,3), and (6,6). There are 36 possible outcomes in total when rolling two dice, so the probability is 4/36, which simplifies to 1/9
+
+
+The probability that none of the balls drawn is blue is 10/21. This is because there are 10 ways to choose two balls from the 5 non-blue balls, and 21 ways to choose two balls from the 7 total balls
+
+
+Q12)
+
+Below are the scores obtained by a student in tests 
+34,36,36,38,38,39,39,40,40,41,41,41,41,42,42,45,49,56
+1)	Find mean, median, variance, standard deviation.
+2)	What can we say about the student marks?
+
+To answer your questions, I will use the following data set of scores:
+34, 36, 36, 38, 38, 39, 39, 40, 40, 41, 41, 41, 41, 42, 42, 45, 49, 56
+
+
+The mean, median, variance, and standard deviation of the scores are:
+
+
+Mean: The mean is the average of all the scores. To calculate the mean, we add up all the scores and divide by the number of scores. In this case, the mean is:
+
+Mean=1834+36+36+⋯+49+56​=41.22
+
+Median: The median is the middle score when the scores are arranged in ascending order. To find the median, we first sort the scores and then find the middle value. If there are an even number of scores, we take the average of the middle two values. In this case, the median is:
+
+Sorted scores: 34, 36, 36, 38, 38, 39, 39, 40, 40, 41, 41, 41, 41, 42, 42, 45, 49, 56
+Middle two values: 40 and 41
+Average of middle two values: (40 + 41) / 2 = 40.5
+
+Median=40.5
+
+Variance: The variance is a measure of how spread out the scores are from the mean. To calculate the variance, we find the difference between each score and the mean, square it, and then take the average of these squared differences. In this case, the variance is:
+
+Variance=18(34−41.22)2+(36−41.22)2+(36−41.22)2+⋯+(49−41.22)2+(56−41.22)2​=34.57
+
+Standard deviation: The standard deviation is the square root of the variance. It is also a measure of how spread out the scores are from the mean, but it is in the same units as the scores. In this case, the standard deviation is:
+
+Standard deviation=34.57​=5.88
+
+Based on the mean, median, variance, and standard deviation, we can say that the student marks are:
+
+
+Slightly skewed to the right: The mean is higher than the median, which indicates that there are some high scores that pull the mean up. The highest score is 56, which is far from the mean and the median.
+Moderately dispersed: The variance and the standard deviation are not very large, which means that most of the scores are close to the mean. However, they are not very small either, which means that there is some variation in the scores. The range of the scores is 22, which is about 53% of the mean.
+
+I hope this helps you understand the statistics of the scores. If you want to learn more about how to calculate these measures, you can check out these resources:
+
+
+Q13)
+The nature of skewness when the mean and the median of data are equal is zero skew. This means that the distribution of data is symmetrical, and its left and right sides are mirror images of each other. A normal distribution is an example of a symmetrical distribution with zero skew
+
+Q14)
+The nature of skewness when the mean is greater than the median is positive skew or right skew. This means that the distribution of the data is asymmetrical and has a long tail on the right side, where the larger values are. In a positively skewed distribution, most of the data points are concentrated on the left side of the distribution, and there are some extreme values on the right side
+
+Q15)
+The nature of skewness when the median is greater than the mean is negative skew or left skew. This means that the distribution of the data is asymmetrical and has a long tail on the left side, where the smaller values are. In a negatively skewed distribution, most of the data points are concentrated on the right side of the distribution, and there are some extreme values on the left side
+
+Q16)
+A positive kurtosis value indicates that the data has a leptokurtic distribution, which means that it has a sharper peak and heavier tails than a normal distribution. This implies that there are more outliers or extreme values in the data than in a normal distribution. A positive kurtosis value is also known as positive excess kurtosis, which is the difference between the kurtosis of the data and the kurtosis of a normal distribution
+
+Q17)
+
+A negative kurtosis value indicates that the data has a platykurtic distribution, which means that it has a flatter peak and thinner tails than a normal distribution. This implies that more data values are located near the mean and less data values are located on the tails
+
+Q18)
+
+we can say that the distribution of the data is:
+
+Symmetrical: The median is in the middle of the box, which means that the data is evenly distributed on both sides of the center.
+Unimodal: The box plot has only one peak, which is the median. This means that there is only one most frequent value in the data.
+Not skewed: The mean and the median are equal, which means that there is no skewness in the data. The data does not have a long tail on either side.
+Moderately dispersed: The interquartile range (IQR) is relatively small, which means that most of the data values are close to the median. However, the range of the data is relatively large, which means that there is some variation in the data. The data does not have any outliers or extreme values.
+
+
+
+we can say that the nature of skewness of the data is positive skew or right skew. This means that the distribution of the data is asymmetrical and has a long tail on the right side, where the larger values are. In a positively skewed distribution, most of the data points are concentrated on the left side of the distribution, and there are some extreme values on the right side
+
+
+
+we can say that the IQR (Interquartile Range) of the data is approximately 4. The IQR is the difference between the third quartile (Q3) and the first quartile (Q1) of the data. In this box plot, Q3 appears to be around 14 and Q1 appears to be around 10. So, the IQR is:
+IQR=Q3−Q1=14−10=4
+The IQR measures the spread of the middle 50% of the data. A smaller IQR means that the data is more consistent around the median
+
+Q19)
+
+Boxplot 1 shows a more compact distribution of data with a smaller interquartile range (IQR) compared to Boxplot 2. The median value is also lower in Boxplot 1. This suggests that the dataset represented by Boxplot 1 has a lower central tendency and less variability than that of Boxplot 2.
+Boxplot 2 has a wider interquartile range (IQR), indicating greater variability in the data, and its median value is higher. This suggests that the dataset represented by Boxplot 2 has a higher central tendency and more variability than that of Boxplot 1.
+Both boxplots have no visible outliers, which means that there are no extreme values in either dataset that are far from the rest of the data.
+The y-axis label “wbs” could indicate the name of the variable being measured or compared by the boxplots. However, without further context, it is not clear what “wbs” stands for or what units it has
+
+Q20)
+Data _set: Cars.csv Calculate the probability of MPG of Cars for the below cases. MPG <- Cars $ MPG a. P(MPG>38) Ans: Prob_MPG_greater_than_38 = np.round(1 - stats.norm.cdf(38, loc= q20.MPG.mean(), scale= q20.MPG.std()),3) print('P(MPG>38)=',Prob_MPG_greater_than_38)
+
+P(MPG>38)= 0.348
+
+b. P(MPG<40) Ans: prob_MPG_less_than_40 = np.round(stats.norm.cdf(40, loc = q20.MPG.mean(), scale = q20.MPG.std()),3) print('P(MPG<40)=',prob_MPG_less_than_40)
+
+P(MPG<40)= 0.729
+
+c. P (20<MPG<50) Ans: prob_MPG_greater_than_20 = np.round(1-stats.norm.cdf(20, loc = q20.MPG.mean(), scale = q20.MPG.std()),3) print('p(MPG>20)=',(prob_MPG_greater_than_20)) p(MPG>20)= 0.943
+
+prob_MPG_less_than_50 = np.round(stats.norm.cdf(50, loc = q20.MPG.mean(), scale = q20.MPG.std()),3) print('P(MPG<50)=',(prob_MPG_less_than_50)) P(MPG<50)= 0.956
+
+prob_MPG_greaterthan20_and_lessthan50= (prob_MPG_less_than_50) - (prob_MPG_greater_than_20) print('P(20<MPG<50)=',(prob_MPG_greaterthan20_and_lessthan50)) P(20<MPG<50)= 0.013000000000000012
+
+Q21) 
+
+a) Check whether the MPG of Cars follows Normal Distribution Dataset: Cars.csv Ans: a.) MPG of cars follows normal distribution
+
+b) Check Whether the Adipose Tissue (AT) and Waist Circumference (Waist) from wc-at data set follows Normal Distribution Dataset: wc-at.csv Ans: Adipose Tissue (AT) and Waist does not follow Normal Distribution
+
+Q22)
+Q 22)
+
+z value for 90% confidence interval
+print('Z score for 60% Conifidence Intervla =',np.round(stats.norm.ppf(.05),4)) Z score for 60% Conifidence Intervla = -1.6449
+
+z value for 94% confidence interval
+print('Z score for 60% Conifidence Intervla =',np.round(stats.norm.ppf(.03),4)) Z score for 60% Conifidence Intervla = -1.8808
+
+z value for 60% confidence interval
+print('Z score for 60% Conifidence Intervla =',np.round(stats.norm.ppf(.2),4)) Z score for 60% Conifidence Intervla = -0.8416
+
+
+The Z scores of a confidence interval are the values of Z that correspond to the desired level of confidence. They can be found by using a Z-table or a calculator. For example, for a 90% confidence interval, we need to find the value of Z that leaves 5% of the area in each tail of the standard normal curve. This value is 1.645. Similarly, we can find the Z scores for other confidence levels:
+Confidence Level	Z Score
+90%	1.645
+94%	1.881
+60%	0.842
+
+
+
+ Q 23) Calculate the t scores of 95% confidence interval, 96% confidence interval, 99% confidence interval for sample size of 25
+Ans:
+
+t score for 95% confidence interval
+print('T score for 95% Confidence Interval =',np.round(stats.t.ppf(0.025,df=24),4)) T score for 95% Confidence Interval = -2.0639
+
+t value for 99% Confidence Interval
+print('T score for 95% Confidence Interval =',np.round(stats.t.ppf(0.005,df=24),4)) T score for 95% Confidence Interval = -2.7969
+
+The t scores of a confidence interval are the values of t that correspond to the desired level of confidence. They can be found by using a t-table or a calculator. For example, for a 95% confidence interval with a sample size of 25, we need to find the value of t that leaves 2.5% of the area in each tail of the t-distribution with 24 degrees of freedom. This value is 2.064. Similarly, we can find the t scores for other confidence levels:
+
+Confidence Level	t Score
+95%	2.064
+96%	2.172
+99%	2.797
+
+Q24)
+
+Explanation:  import numpy as np Import scipy as stats t_score = (x - pop mean) / (sample standard daviation / square root of sample size) (260-270)/90/np.sqrt(18)) t_score = -0.471 stats.t.cdf(t_score, df = 17) 0.32 = 32%
+
+This is a question about hypothesis testing using the t-distribution. To answer it, we need to calculate the t-statistic and the corresponding p-value for the given data. The t-statistic is given by the formula:
+
+where xˉ is the sample mean, μ is the population mean, s is the sample standard deviation, and n is the sample size. Plugging in the given values, we get:
+
+
+The p-value is the probability of getting a t-statistic less than or equal to the observed value, assuming the null hypothesis (that the population mean is 270) is true. To find the p-value, we need to use a t-table or a calculator. The degrees of freedom for the t-distribution are n−1=17. Using a t-table 1, we can see that the p-value is approximately 0.3218. This means that there is a 32.18% chance of getting a sample mean of 260 or less, if the true population mean is 270.
+Alternatively, we can use a calculator to find the p-value. For example, using the R programming language, we can use the command pt(-0.471, 17) to get the same result

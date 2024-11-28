@@ -1,0 +1,52 @@
+Print Substring!
+Problem Description
+
+Given a string A and two integer B and C.
+
+Find and return the substring of A starting from index B and ending with index C.
+
+NOTE:
+
+Consider 0 based indexing.
+Try to use direct library function to solve this.
+
+
+Problem Constraints
+1 <= |A| <= 100
+
+0 <= B, C < |A|
+
+
+
+Input Format
+First argument is an string A.
+
+Second argument is an integer B.
+
+Third argument is an integer C.
+
+
+Solution.py
+class Solution:
+    # @param A : string
+    # @param B : integer
+    # @param C : integer
+    # @return a strings
+    def solve(self, A, B, C):
+        if((type(A)==str) &(type(B)==int) & (type(C)==int) ):
+            return A[B:C+1]
+        return "Enter A as string, B as integer, C as integer"
+
+main.py
+def main():
+    # YOUR CODE GOES HERE
+    # E.g. 'input()' for input & 'print' for output
+    str1=input()
+    str2=input()
+    print(str1,str2,sep="")
+    return 0
+
+if __name__ == '__main__':
+    main()
+
+

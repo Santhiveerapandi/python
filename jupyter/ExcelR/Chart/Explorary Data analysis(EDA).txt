@@ -1,0 +1,35 @@
+Explorary Data analysis(EDA)
+
+STEP1: Data Cleaning: 
+EDA involves examining the information for errors, lacking values, and inconsistencies. 
+It includes techniques including records imputation, managing missing statistics, and figuring out and getting rid of outliers.
+
+----> Data loading
+-----> Dealing with data type
+------> Dealing with missing value
+-------> Dealing with outliers
+
+
+STEP2: Descriptive Statistics:
+EDA utilizes precise records to recognize the important tendency, variability, and distribution of variables. 
+Measures like suggest, median, mode, preferred deviation, range, and percentiles are usually used.
+
+----> Discriptive measures like mean, median, mode.
+-----> varibility like Varience/ standard deviation
+------> Skewness and kurtosis
+
+
+Step3:  Data Visualization: 
+EDA employs visual techniques to represent the statistics graphically.
+ Visualizations consisting of histograms, box plots, scatter plots, line plots, heatmaps, and bar charts assist in identifying styles, trends, and relationships within the facts.
+
+------> histogram
+--------> box plots
+------------scatter plots
+
+Step4: Correlation and Relationships: 
+EDA allows discover relationships and dependencies between variables.
+ Techniques such as correlation analysis, scatter plots, and pass-tabulations offer insights into the power and direction of relationships between variables.
+
+--------> finding correlation analysis
+----------> scatter plot and heatmaps to understand the relation.
